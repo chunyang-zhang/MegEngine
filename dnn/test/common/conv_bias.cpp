@@ -828,9 +828,6 @@ void check_conv_bias(DType src_dtype, DType filter_dtype, DType bias_dtype,
     } else {
         for (auto&& arg : args) {
             auto z = get_z_shape(arg);
-            printf("%s, %s, %s, %s\n", arg.src.to_string().c_str(),
-                   arg.filter.to_string().c_str(), arg.bias.to_string().c_str(),
-                   z.to_string().c_str());
             checker.set_dtype(0, src_dtype)
                     .set_dtype(1, filter_dtype)
                     .set_dtype(2, bias_dtype)
